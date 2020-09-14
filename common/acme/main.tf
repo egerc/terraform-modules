@@ -17,6 +17,6 @@ resource "acme_certificate" "certificate" {
   subject_alternative_names = var.subject_alternative_names
 
   dns_challenge {
-    provider = "route53"
+    provider = var.dns_provider
   }
 }
