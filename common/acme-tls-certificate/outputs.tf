@@ -24,6 +24,6 @@ output "certificate_p12" {
 }
 
 output "registration_private_key" {
-  description = "The private key used to identity the account."
+  description = "The private key used to identify the account."
   value       = tls_private_key.reg_private_key.private_key_pem
 }

@@ -28,3 +28,4 @@ variable "dns_provider" {
 locals {
   acme_server_url = var.use_production_server_url ? "https://acme-v02.api.letsencrypt.org/directory" : "https://acme-staging-v02.api.letsencrypt.org/directory"
 }
+
