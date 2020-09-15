@@ -7,7 +7,7 @@ variable "name" {
 }
 
 variable "create_acr" {
-  type = boolean
+  type = bool
   description = "Set to true to create an ACR"
   default = false
 }
