@@ -7,9 +7,9 @@ variable "name" {
 }
 
 variable "create_acr" {
-  type = bool
+  type        = bool
   description = "Set to true to create an ACR"
-  default = false
+  default     = false
 }
 
 variable "resource_tags" {
