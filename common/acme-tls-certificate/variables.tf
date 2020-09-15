@@ -21,7 +21,7 @@ variable "dns_provider" {
 }
 
 variable "registration_private_key" {
-  type = string
+  type        = string
   description = "The acme account private key generated from the acme-tls-registration module"
 }
 
