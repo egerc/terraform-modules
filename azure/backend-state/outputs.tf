@@ -1,12 +1,12 @@
-output "storage-account-name" {
+output "storage_account_name" {
   value = azurerm_storage_account.remote_state_sa.name
 }
 
-output "resource-group-name" {
+output "resource_group_name" {
   value = azurerm_resource_group.remote_state_rg.name
 }
 
-output "container-name" {
+output "container_name" {
   value = azurerm_storage_container.terraform_remote_state_container.name
 }
 
