@@ -23,7 +23,7 @@ variable "environment" {
 variable "is_no_delete" {
   description = "Does the Resource Group prevent deletion?"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "is_read_only" {

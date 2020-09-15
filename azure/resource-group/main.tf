@@ -1,5 +1,9 @@
+module "providers" {
+  source = "../provider"
+}
+
 provider "azurerm" {
-  features {}
+  features {} # need to have this here too even though provider and version is imported from a module
 }
 
 resource "azurerm_resource_group" "main" {

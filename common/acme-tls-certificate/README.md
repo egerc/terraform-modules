@@ -1,4 +1,4 @@
-# Module Acme
+# Module Acme TLS Certificate
 
 Module for generating TLS certificates from Lets Encrypt
 
@@ -9,7 +9,6 @@ module "acme_tls_certificate" {
   source = ".../terraform-modules/common/acme-tls-certificate"
 
   use_production_server_url = true
-  email_address             = "egerc@github.com"
   common_name               = "acme.github.com"
   subject_alternative_names = ["alias.github.com"]
   dns_provider              = "azure"
@@ -21,10 +20,10 @@ module "acme_tls_certificate" {
 | Variable Name               | Type     | Description                                                |
 | ----------------------------| -------- | ---------------------------------------------------------- |
 | `use_production_server_url` | _bool_   | True uses the prod environment and false uses staging.     |
-| `email_address`             | _string_ | Your email address for registration.                       |
 | `common_name`               | _string_ | The DNS name of the certificate.                           |
 | `subject_alternative_names` | _list_   | The SANs for the certificate (if any).                     |
 | `dns_provider`              | _string_ | The DNS provider for challenge (azure/route53 etc).        |
+| `registration_private_key`  | _string_ | The Lets Encrypt account private key                       |
 
 You must also provide the config block as environment variables for the DNS provider https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges
 
@@ -39,4 +38,3 @@ Once the deployments are completed successfully, the output for the current modu
 - `certificate_pem`: The certificate in PEM format. This does not include the issuer_pem.
 - `issuer_pem`: The intermediate certificate of the issuer.
 - `certificate_p12`: The certificate, intermediate, and the private key archived as a PFX file (PKCS12 format, generally used by Microsoft products).
-- `registration_private_key`: The private key used to identify the account.
