@@ -3,10 +3,6 @@ resource "azurerm_management_lock" "main_delete" {
   name       = "managed-by-terraform-delete-lock"
   scope      = azurerm_resource_group.main.id
   lock_level = "CanNotDelete"
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "azurerm_management_lock" "main_ro" {
@@ -14,8 +10,4 @@ resource "azurerm_management_lock" "main_ro" {
   name       = "managed-by-terraform-readonly-lock"
   scope      = azurerm_resource_group.main.id
   lock_level = "ReadOnly"
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
