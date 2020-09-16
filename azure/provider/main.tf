@@ -7,7 +7,6 @@ provider "azurerm" {
   features {}
 }
 
-provider "random" {
-  version = "~> 2.3"
+provider "azuread" {
+  version = "~> 1.0.0"
 }
-
