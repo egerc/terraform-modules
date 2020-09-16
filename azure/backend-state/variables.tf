@@ -3,13 +3,9 @@ variable "name" {
   default     = ""
 }
 
-variable "location" {
-  description = " (Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
-}
-
 variable "resource_group_name" {
-  description = "(Optional) The name of the resource group in which to create the storage account. Changing this forces a new resource to be created. If omitted, will create a new RG based on the `name` above"
-  default     = ""
+  type        = string
+  description = "The name of the resource group in which to create the storage account."
 }
 
 variable "resource_tags" {

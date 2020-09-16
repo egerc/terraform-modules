@@ -37,6 +37,6 @@ module "keyvault" {
 
 Once the deployments are completed successfully, the output for the current module will be in the format mentioned below:
 
-- `keyvault_id`: The id of the Keyvault.
-- `keyvault_uri`: The uri of the keyvault.
-- `keyvault_name`: The name of the Keyvault.
+- `key_vault_id`: The id of the Keyvault.
+- `key_vault_uri`: The uri of the keyvault.
+- `key_vault_name`: The name of the Keyvault.
