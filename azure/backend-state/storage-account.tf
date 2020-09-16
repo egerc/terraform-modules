@@ -5,8 +5,4 @@ resource "azurerm_storage_account" "remote_state_sa" {
   resource_group_name      = var.resource_group_name
   location                 = data.azurerm_resource_group.main.location
   account_replication_type = var.storage_account_replication_type
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
