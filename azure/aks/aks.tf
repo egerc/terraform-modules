@@ -23,14 +23,18 @@ resource "azurerm_kubernetes_cluster" "main" {
     os_disk_size_gb = var.agent_vm_os_disk_size
     vnet_subnet_id  = var.vnet_subnet_id
     max_pods        = var.max_pods
+    # cluster autoscaling
+    enable_auto_scaling = var.enable_auto_scaling
+    max_count           = var.max_node_count
+    min_count           = var.min_node_count
   }
 
   network_profile {
-    network_plugin     = var.network_plugin
-    network_policy     = var.network_policy
-    service_cidr       = var.service_cidr
-    dns_service_ip     = var.dns_ip
-    docker_bridge_cidr = var.docker_cidr
+    network_plugin = var.network_plugin
+    network_policy = var.network_policy
+    # service_cidr       = var.service_cidr
+    # dns_service_ip     = var.dns_ip
+    # docker_bridge_cidr = var.docker_cidr
   }
 
   role_based_access_control {
